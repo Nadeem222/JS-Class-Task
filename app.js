@@ -1,4 +1,6 @@
 function generateQuiz(){
+    document.querySelector("#quizContainer").style.display = "block";
+    document.querySelector(".textCon").style.display = "none"
 
     const textArea = document.querySelector('textarea');
     const lines = textArea.value.split('\n\n');

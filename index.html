@@ -4,10 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quiz Task</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+
 </head>
 <body>
     <div class="container">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div class="container-md">
+              <a class="navbar-brand" href="#">Navbar</a>
+            </div>
+          </nav>
+          <div class="content">
 
+              <div class="textCon">
+                <h1>Write Your Quiz Here</h1>
+                  <textarea name="" id="" cols="70" rows="30" class="border-0 border-primary"></textarea>
+                  <button onclick="generateQuiz()" class="btn btn-primary fs-5 fw-bold">Generate Quiz</button>
+              </div>
+              <div id="quizContainer">
+      
+              </div>
+          </div>
     </div>
 
     <script src="app.js"></script>
