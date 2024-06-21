@@ -1,37 +1,146 @@
-function generateQuiz(){
-    document.querySelector("#quizContainer").style.display = "block";
-    document.querySelector(".textCon").style.display = "none"
+// \
+let array = [3, 7, 11, 2, 9];
+let result = 0
 
-    const textArea = document.querySelector('textarea');
-    const lines = textArea.value.split('\n\n');
-    // console.log(lines)
+for (let i = 0; i < array.length; i++) {
+  result += array[i]
+  }
+console.log(result);
 
-    const questions = [];
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i];
-    //   console.log(` line: ${line} `)
-      const parts = line.split('\n');
-    //   console.log(`Parts : ${parts}`)
-      const question = parts[0].trim();
-      const options = [];
-      for (let j = 1; j < parts.length; j++) {
-        options.push(parts[j].trim());
-      }
-      questions.push({ question, options });
-    }
-    let quiz = document.getElementById("quizContainer");
-
-    quiz.innerHTML = "";
-
-    questions.forEach((item , index) => {
-       quiz.innerHTML += `<div> <h3> Question: ${index + 1} ${item.question} </h3> 
-       <ul>
-          ${item.options.map(option => `<li> ${option} </li>`).join('')} 
-       </div>`
-       item.options.forEach( option => {
-        console.log(option)
-       })
-    })
-    console.log(questions);
+function evenOddChecker(num){
+  if(num % 2 === 0){
+    console.log("num is even");
+  }else{
+    console.log("num is odd");
+  }
 }
-console.log(typeof(questions));
+
+evenOddChecker(5)
+
+const reverseWord = (n) =>{
+  let splitValue = n.split('');
+
+  let reverseArray = splitValue.reverse()
+
+  let str = reverseArray.join('')
+
+  console.log(str)
+}
+
+reverseWord("saqib")
+
+function reverseCheck(val){
+  let reverse = "";
+  for(let i = val.length -1 ; i >= 0; i--){
+   reverse += val[i]
+  }
+  if(val === reverse){
+    console.log(val + "Is palindrome");
+  }else{
+    console.log((val + "is not palindrome"));
+  }
+console.log(reverse);
+}
+reverseCheck("madam")
+
+
+const array2 = [1, 2, 3, 3, 4, 5, 5, 6];
+
+  let duplicate = array2.filter((value , index , array)=>{
+    return array.indexOf(value) === index
+  })
+console.log(duplicate);
+
+
+const largeArray = [5, 10, 2, 8, 3];
+
+let bigNum = largeArray[0] , smallNum = largeArray[0]
+
+largeArray.forEach((val) =>{
+  if (val > bigNum) {
+    bigNum = val
+  }else if(val < smallNum){
+    smallNum = val
+  }
+})
+
+console.log(bigNum + ":" + smallNum);
+
+
+let fruits = ['apple', 'banana', 'orange', 'apple', 'banana', 'apple' , "grape"];
+
+let fruitCount = {};
+for (let fruit of fruits) {
+  // console.log(fruit);
+  if (fruitCount[fruit]) {
+    fruitCount[fruit]++;
+  } else {
+    fruitCount[fruit] = 1;
+  }
+}
+
+// Output the counts
+console.log(fruitCount);
+
+
+let fruitCounting = {}
+
+fruits.forEach((item) => {
+  if(fruitCounting[item]){
+
+    fruitCounting[item]++
+  }else{
+
+    fruitCounting[item] = 1
+  }
+})
+
+console.log("Fruit Counting :" , fruitCounting);
+
+
+let sortArray = [5, 2, 9, 1, 7];
+
+console.log(sortArray.sort());
+
+function factorial(n){
+  let result = 1;
+  for (let i = 1; i <= n; i++) {
+    // console.log("array i:" + i);
+    result *= i
+    // console.log(result);
+    
+  }
+  return result
+}
+
+console.log(factorial(5));
+
+const reverseSentense = (str) =>{
+  let splitTense = str.split(" ");
+
+  let reverseTense = splitTense.reverse()
+
+  let result = reverseTense.join(" ")
+
+  console.log(result);
+}
+
+reverseSentense("Hello world, how are you?")
+
+
+const stringCheck = (str1 , str2) =>{
+  str1 = str1.toLowerCase()
+  str2 = str2.toLowerCase()
+
+  if(str1.length !== str2.length){
+    return false;
+  }
+
+  let sortedStr1 = str1.split('').sort().join('');
+  let sortedStr2 = str2.split('').sort().join('');
+  console.log(sortedStr1 , sortedStr2);
+  return sortedStr1 === sortedStr2
+}
+
+console.log(stringCheck("listen" , "silent"));
+console.log(stringCheck("hello" , "world"));
